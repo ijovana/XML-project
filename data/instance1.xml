@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<am:amandman xmlns:pr="http://www.parlament.gov.rs/propisi"
+ xmlns:pred="http://www.parlament.gov.rs/predicate"
+ xmlns:am="http://www.parlament.gov.rs/amandman"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.parlament.gov.rs/amandman file:/C:/Users/Mima/Documents/GitHub/XML-project/data/schemas/amandman.xsd" redni_broj="B" ID="sJk0i" naziv="AMANDMAN" status="wT-XYkPz3_LsAz438xAMbneZq4Ggv" about="iiiM6zv">
+    <am:naziv_predloga property="pred:naziv_predloga" datatype="xs:string">iZctuDgmTzaDk8XxuKLQ2yt</am:naziv_predloga>
+    <am:odredba_predloga>
+        <pr:odeljak redni_broj="¾." naziv="Ç" ID="vtpZb">
+            <pr:clan broj="¼." naziv="TrYZwNN" ID="Uml5.Gx4Wo">
+                <pr:naslov>vc4MijweLd-6uvhDVG8rqdkF-zq</pr:naslov>
+                <pr:opis/>
+                <pr:sadrzaj>
+                    <pr:stav id="8">
+                        <pr:tacka naziv="6)vir">
+                            <pr:podtacka naziv="(5)">
+                                <pr:alineje>- </pr:alineje>
+                                <pr:alineje>- a</pr:alineje>
+                            </pr:podtacka>
+                            <pr:podtacka naziv="(9)">
+                                <pr:alineje>- dz</pr:alineje>
+                                <pr:alineje>- </pr:alineje>
+                            </pr:podtacka>
+                        </pr:tacka>
+                        <pr:tacka naziv="22)mnu">
+                            <pr:podtacka naziv="(6)">
+                                <pr:alineje>- </pr:alineje>
+                                <pr:alineje>- qk</pr:alineje>
+                            </pr:podtacka>
+                            <pr:podtacka naziv="(1)">
+                                <pr:alineje>- </pr:alineje>
+                                <pr:alineje>- rsl</pr:alineje>
+                            </pr:podtacka>
+                        </pr:tacka>
+                    </pr:stav>
+                    <pr:stav id="5">
+                        <pr:tacka naziv="9)">
+                            <pr:podtacka naziv="(9315)zy">
+                                <pr:alineje>- </pr:alineje>
+                                <pr:alineje>- </pr:alineje>
+                            </pr:podtacka>
+                            <pr:podtacka naziv="(4)">
+                                <pr:alineje>- </pr:alineje>
+                                <pr:alineje>- y</pr:alineje>
+                            </pr:podtacka>
+                        </pr:tacka>
+                        <pr:tacka naziv="4859)">
+                            <pr:podtacka naziv="(1)">
+                                <pr:alineje>- bzg</pr:alineje>
+                                <pr:alineje>- </pr:alineje>
+                            </pr:podtacka>
+                            <pr:podtacka naziv="(8)">
+                                <pr:alineje>- </pr:alineje>
+                                <pr:alineje>- dk</pr:alineje>
+                            </pr:podtacka>
+                        </pr:tacka>
+                    </pr:stav>
+                </pr:sadrzaj>
+            </pr:clan>
+            <pr:clan broj="³." naziv="SAfx" ID="lD9JBY.25DXHIAO3X">
+                <pr:naslov>Jeklcv1KIRUgc7x9r</pr:naslov>
+                <pr:opis/>
+                <pr:sadrzaj>
+                    <pr:stav id="2">
+                        <pr:tacka naziv="63)">
+                            <pr:podtacka naziv="(163)lmk">
+                                <pr:alineje>- ct</pr:alineje>
+                                <pr:alineje>- sge</pr:alineje>
+                            </pr:podtacka>
+                            <pr:podtacka naziv="(059)cbj">
+                                <pr:alineje>- e</pr:alineje>
+                                <pr:alineje>- </pr:alineje>
+                            </pr:podtacka>
+                        </pr:tacka>
+                        <pr:tacka naziv="06)">
+                            <pr:podtacka naziv="(9)">
+                                <pr:alineje>- </pr:alineje>
+                                <pr:alineje>- c</pr:alineje>
+                            </pr:podtacka>
+                            <pr:podtacka naziv="(4285)">
+                                <pr:alineje>- </pr:alineje>
+                                <pr:alineje>- </pr:alineje>
+                            </pr:podtacka>
+                        </pr:tacka>
+                    </pr:stav>
+                    <pr:stav id="4">
+                        <pr:tacka naziv="55)">
+                            <pr:podtacka naziv="(7)">
+                                <pr:alineje>- </pr:alineje>
+                                <pr:alineje>- </pr:alineje>
+                            </pr:podtacka>
+                            <pr:podtacka naziv="(8876)">
+                                <pr:alineje>- </pr:alineje>
+                                <pr:alineje>- </pr:alineje>
+                            </pr:podtacka>
+                        </pr:tacka>
+                        <pr:tacka naziv="7)mt">
+                            <pr:podtacka naziv="(0197)">
+                                <pr:alineje>- </pr:alineje>
+                                <pr:alineje>- hsf</pr:alineje>
+                            </pr:podtacka>
+                            <pr:podtacka naziv="(5)">
+                                <pr:alineje>- </pr:alineje>
+                                <pr:alineje>- l</pr:alineje>
+                            </pr:podtacka>
+                        </pr:tacka>
+                    </pr:stav>
+                </pr:sadrzaj>
+            </pr:clan>
+        </pr:odeljak>
+    </am:odredba_predloga>
+    <am:predlozeno_resenje>
+        <am:brisanje>true</am:brisanje>
+    </am:predlozeno_resenje>
+    <am:obrazlozenje>k-dKTssDQcMRgbEmng3VETmC1Mp59</am:obrazlozenje>
+    <am:podnosilac>
+        <am:ime>J7WLMPbxhzbXyjk</am:ime>
+        <am:prezime>Eazz-WTxld</am:prezime>
+    </am:podnosilac>
+    <am:podnosilac>
+        <am:ime>IOHLiA_S3icN3YYt</am:ime>
+        <am:prezime>eeVPVn78kpxpOYKyD</am:prezime>
+    </am:podnosilac>
+    <am:sadrzaj>V2yMMA7mtZD2O49zCK83dbZZKea8</am:sadrzaj>
+    <am:datum_donosenja property="pred:datum_donosenja" datatype="xs:string">2016-06-27Z</am:datum_donosenja>
+    <am:broj_glasova_za property="pred:broj_glasova_za" datatype="xs:int">-868697910</am:broj_glasova_za>
+    <am:mesto property="pred:mesto" datatype="xs:string">l2z6F5dgFr5CsnDYjQGwl0Eudfe</am:mesto>
+    <am:broj_glasova_protiv property="pred:broj_glasova_protiv" datatype="xs:int">735363758</am:broj_glasova_protiv>
+    <am:datum_kreiranja prototype="pred:datum_kreiranja" datatype="xs:date">2017-10-12</am:datum_kreiranja>
+</am:amandman>

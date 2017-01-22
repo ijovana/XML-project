@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<pr:propis xmlns:pr="http://www.parlament.gov.rs/propisi" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" naziv="S" xs:schemaLocation="http://www.parlament.gov.rs/propisi file:/C:/Users/Mima/Documents/GitHub/XML-project/data/propis.xsd">
+    <pr:deo naziv="EditProba" redni_broj="2">
+        <pr:glava broj="" naslov="OPET NASLOV"/>
+        <pr:glava broj="" naslov="IHIH"/>
+    </pr:deo>
+    <pr:deo naziv="SMOR" redni_broj="2">
+        <pr:glava broj="" naslov="DOKLE VISE"/>
+        <pr:glava broj="" naslov="STVAAAARNO"/>
+    </pr:deo>
+</pr:propis>

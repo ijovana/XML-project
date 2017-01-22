@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<pr:propis xmlns:pr="http://www.parlament.gov.rs/propisi" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" naziv="Krivicni zakonik">
+    <pr:deo naziv="OPSTI">
+        <pr:glava broj="I" naslov="OSNOVNE ODREDBE">
+            <pr:odeljak naziv="DDDD" redni_broj="1.">
+                <pr:clan broj="1.">
+                    <pr:naslov>Nema krivi�nog dela niti kazne bez zakona</pr:naslov>
+                     
+                    <pr:opis>Nikome ne mo�e biti izreena kazna ili druga krivina sankcija za delo koje pre   nego �to je uinjeno zakonom nije bilo odreeno kao krivino delo, niti mu se mo�e izrei kazna  ili druga krivina sankcija koja zakonom nije bila propisana pre nego �to je krivino delo uinjeno.</pr:opis>
+                    <pr:sadrzaj>
+                        <pr:stav id="1">
+                            <pr:tacka naziv="1)">
+                                <pr:podtacka naziv="(1)">
+    <pr:alineje>- a</pr:alineje>
+                                     
+                                </pr:podtacka>
+                            </pr:tacka>
+                        </pr:stav>
+                    </pr:sadrzaj>
+                </pr:clan>
+            </pr:odeljak>
+        </pr:glava>
+    </pr:deo>
+</pr:propis>

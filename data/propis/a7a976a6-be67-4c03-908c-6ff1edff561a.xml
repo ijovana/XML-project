@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<propis xmlns="http://www.parlament.gov.rs/propisi" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" naziv="Krivični zakonik" ID="a7a976a6-be67-4c03-908c-6ff1edff561a" xsi:schemaLocation="http://www.parlament.gov.rs/propisi file://home/kristina/Desktop/XMLProj/XML-project/data/propis.xsd">
+    <deo naziv="Naziv dela" redni_broj="1.">
+        <glava broj="1." naslov="Naslov glave">
+            <odeljak redni_broj="1." naziv="Naziv odeljka">
+                <clan broj="1." naziv="Naziv clana">
+                    <naslov>Naslov clana</naslov>
+                    <opis/>
+                    <sadrzaj>
+                        <stav id="Id stava">
+                            <tacka naziv="Naziv tacke">
+<podtacka naziv="Naziv podtacke">
+    <alineje>Alineja ima tekst..</alineje>
+</podtacka>
+                            </tacka>
+                        </stav>
+                    </sadrzaj>
+                </clan>
+            </odeljak>
+        </glava>
+    </deo>
+</propis>

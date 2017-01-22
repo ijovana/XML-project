@@ -1,0 +1,17 @@
+<div  ng-app="skupstinaApp"  ng-class="{loading:loadingView}">
+	<div><h1>Izmeni detalje sednice:</h1></div>
+
+	<br>
+
+	Stanje: 
+	<div class="row">
+		<div class="col-md-6">
+			<select ng-model="selectedStanje" ng-options="x.naziv for x in listaStanja"></select>
+		</div>
+	</div>
+
+	<br><br>
+	
+	<button type="button" class="btn btn-info" ng-click="edit_session()">Sačuvaj izmene</button>
+
+</div>

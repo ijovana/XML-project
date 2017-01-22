@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../xsl/grddl.xsl"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+    targetNamespace="http://www.parlament.gov.rs/amandman"
+    xmlns:am="http://www.parlament.gov.rs/amandman" xmlns:pr="http://www.parlament.gov.rs/propisi"
+    xmlns:pred="http://www.parlament.gov.rs/predicate/">
+    <xs:import namespace="http://www.parlament.gov.rs/propisi" schemaLocation="propis.xsd"/>
+    <xs:element name="amandman">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="naziv_predloga" nillable="true">
+                    <xs:complexType>
+                        <xs:simpleContent>
+                            <xs:extension base="xs:string">
+                                <xs:attribute default="pred:naziv_predloga" name="property"/>
+                                <xs:attribute default="xs:string" name="datatype"/>
+                            </xs:extension>
+                        </xs:simpleContent>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element minOccurs="1" name="odredba_predloga" nillable="false" form="qualified"
+                    type="xs:string"> </xs:element>
+                <xs:element name="predlozeno_resenje">
+                    <xs:complexType>
+                        <xs:choice>
+                            <xs:element name="brisanje" type="xs:boolean"/>
+                            <xs:element name="izmena" type="xs:boolean"/>
+                            <xs:element name="dopuna" type="xs:boolean"/>
+                        </xs:choice>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element minOccurs="0" name="obrazlozenje" type="xs:string"> </xs:element>
+                <xs:element name="podnosilac" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="ime" type="xs:string"/>
+                            <xs:element name="prezime" type="xs:string"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="sadrzaj" type="xs:string"> </xs:element>
+                <xs:element name="datum_donosenja" form="qualified">
+                    <xs:complexType>
+                        <xs:simpleContent>
+                            <xs:extension base="xs:date">
+                                <xs:attribute default="pred:datum_donosenja" name="property"
+                                    form="unqualified"/>
+                                <xs:attribute default="xs:string" name="datatype" type="xs:string"/>
+                            </xs:extension>
+                        </xs:simpleContent>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="broj_glasova_za">
+                    <xs:complexType>
+                        <xs:simpleContent>
+                            <xs:extension base="xs:int">
+                                <xs:attribute default="pred:broj_glasova_za" name="property"/>
+                                <xs:attribute default="xs:int" name="datatype"/>
+                            </xs:extension>
+                        </xs:simpleContent>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="mesto">
+                    <xs:complexType>
+                        <xs:simpleContent>
+                            <xs:extension base="xs:string">
+                                <xs:attribute default="pred:mesto" name="property"/>
+                                <xs:attribute default="xs:string" name="datatype"/>
+                            </xs:extension>
+                        </xs:simpleContent>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="broj_glasova_protiv">
+                    <xs:complexType>
+                        <xs:simpleContent>
+                            <xs:extension base="xs:int">
+                                <xs:attribute default="pred:broj_glasova_protiv" name="property"/>
+                                <xs:attribute default="xs:int" name="datatype"/>
+                            </xs:extension>
+                        </xs:simpleContent>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="datum_kreiranja">
+                    <xs:complexType>
+                        <xs:simpleContent>
+                            <xs:extension base="xs:date">
+                                <xs:attribute default="pred:datum_kreiranja" name="property"/>
+                                <xs:attribute default="xs:date" name="datatype"/>
+                            </xs:extension>
+                        </xs:simpleContent>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute name="redni_broj" use="required" type="xs:string"> </xs:attribute>
+            <xs:attribute name="ID" type="xs:string"/>
+            <xs:attribute default="AMANDMAN" name="naziv" type="xs:string"/>
+            <xs:attribute name="status" type="xs:string"/>
+            <xs:attribute name="about" type="xs:string"/>
+            <xs:attribute name="stanje" type="xs:string"/>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

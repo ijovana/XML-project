@@ -1,0 +1,71 @@
+<div  ng-app="skupstinaApp" ng-controller="addAmendmentCtrl" ng-class="{loading:loadingView}">
+
+	<div class="row">
+		<div class="col-md-6">
+			<h2>PREDLOŽI NOVI AMANDMAN</h2>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-6">
+		<h4>Odnosi se na</h4> 
+		</div>
+	</div>
+
+	<br>
+
+	<div class="row">
+		<div class="col-md-6">
+		<h4>Zakon: </h4> 
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-6">
+			<select ng-model="selectedPropis" ng-change="regulation_selection_changed()" ng-options="x._naziv for x in listaOdredbiPropisa"></select>
+		</div>
+	</div>
+
+	<div>ODABRANO JE {{selectedPropis._ID}}</div>
+
+	<br>
+
+	<div class="row">
+		<div class="col-md-6">
+		<h4>Odeljak: </h4> 
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-6">
+			<select ng-model="selectedOdeljak" ng-change="odeljak_selection_changed()" ng-options="x._naziv for x in odeljci"></select>
+		</div>
+	</div>
+
+	<div>ODABRANO JE {{selectedOdeljak._ID}}</div>
+
+	<br>
+
+	<div class="row">
+		<div class="col-md-6">
+			<h4>Član: </h4> 
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-6">
+			<select ng-model="selectedClan" ng-change="clan_selection_changed()" ng-options="x._naziv for x in clanovi"></select>
+		</div>
+	</div>
+
+	<div>ODABRANO JE {{selectedClan._ID}}</div>
+
+	<br>
+	<button type="button" class="btn btn-info" ng-click="set_selection()">Postavi odredbu propisa</button>
+
+	<br><br>
+	<div id="editor"></div>
+	<button type="button" class="btn btn-info" ng-click="add_amendment()">Pošalji predlog</button>
+
+
+</div>

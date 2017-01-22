@@ -1,0 +1,25 @@
+<div  ng-app="skupstinaApp"  ng-class="{loading:loadingView}">
+	<div><h2>Dodaj dnevni red sednice:</h2></div>
+
+	<button type="button" class="btn btn-info" ng-click="edit_session()">Sačuvaj izmene</button>
+
+
+	<div class="row">
+		<div class="col-md-6">
+		Predloženi amandmani:
+		<div ng-repeat="amandman in suggestedAmendmentsList">
+                  <input type="checkbox" checklist-model="chosenAmendments.amendments" checklist-value="amandman.ID" />{{amandman.naziv}}
+    	</div>
+    	</div>
+    	<div class="col-md-6">
+		Predloženi zakoni:
+		<div ng-repeat="zakon in suggestedRegulationsList">
+                  <input type="checkbox" checklist-model="chosenRegulations.regulations" checklist-value="zakon.ID" />{{zakon.naziv}}
+    	</div>
+    	</div>
+   	</div>
+
+   	<br>
+
+
+</div>

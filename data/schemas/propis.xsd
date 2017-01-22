@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../xsl/grddl.xsl"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+    targetNamespace="http://www.parlament.gov.rs/propisi"
+    xmlns:pr="http://www.parlament.gov.rs/propisi" xmlns="http://www.w3.org/ns/rdfa#"
+    xmlns:pred="http://www.parlament.gov.rs/predicate/">
+
+    <xs:element name="propis">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="deo" maxOccurs="unbounded" minOccurs="1">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element maxOccurs="unbounded" name="glava" minOccurs="1">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element ref="pr:odeljak" maxOccurs="unbounded"
+                                            minOccurs="0"/>
+                                    </xs:sequence>
+                                    <xs:attribute name="broj" form="unqualified" use="required">
+                                        <xs:simpleType>
+                                            <xs:restriction base="xs:string">
+                                                <xs:pattern value="[MDCLXVI]*(\.)?"/>
+                                            </xs:restriction>
+                                        </xs:simpleType>
+                                    </xs:attribute>
+                                    <xs:attribute name="naslov">
+                                        <xs:simpleType>
+                                            <xs:restriction base="xs:string">
+                                                <xs:pattern value="\p{Lu}+\s?\p{Lu}*"/>
+                                            </xs:restriction>
+                                        </xs:simpleType>
+                                    </xs:attribute>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="naziv" use="optional">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:pattern value="\p{Lu}+"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:attribute>
+                        <xs:attribute name="redni_broj" type="xs:string" use="optional"/>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="naziv">
+                    <xs:complexType>
+                        <xs:simpleContent>
+                            <xs:extension base="xs:string">
+                                <xs:attribute default="pred:naziv" name="property" use="optional"/>
+                                <xs:attribute default="xs:string" name="datatype"/>
+                            </xs:extension>
+                        </xs:simpleContent>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="mesto">
+                    <xs:complexType>
+                        <xs:simpleContent>
+                            <xs:extension base="xs:string">
+                                <xs:attribute default="pred:mesto" name="property"/>
+                                <xs:attribute default="xs:string" name="datatype"/>
+                            </xs:extension>
+                        </xs:simpleContent>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="datum_donosenja">
+                    <xs:complexType>
+                        <xs:simpleContent>
+                            <xs:extension base="xs:date">
+                                <xs:attribute default="pred:datum_donosenja" name="property"/>
+                                <xs:attribute default="xs:date" name="datatype"/>
+                            </xs:extension>
+                        </xs:simpleContent>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute name="ID" type="xs:string"/>
+            <xs:attribute name="status" type="xs:string"/>
+            <xs:attribute name="about" type="xs:string"/>
+            <xs:attribute name="stanje" type="xs:string"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="clan">
+        <xs:complexType mixed="false">
+            <xs:sequence>
+                <xs:element name="naslov" type="xs:string"> </xs:element>
+                <xs:element name="opis" nillable="true">
+                    <xs:complexType mixed="false"/>
+                </xs:element>
+                <xs:element name="sadrzaj" form="qualified" maxOccurs="1" minOccurs="1">
+                    <xs:complexType mixed="false">
+                        <xs:choice maxOccurs="1" minOccurs="1">
+                            <xs:element maxOccurs="unbounded" name="stav" minOccurs="1">
+                                <xs:complexType mixed="false">
+                                    <xs:sequence>
+                                        <xs:element maxOccurs="unbounded" name="tacka" minOccurs="1">
+                                            <xs:complexType mixed="false">
+                                                <xs:sequence>
+                                                  <xs:element maxOccurs="unbounded" name="podtacka"
+                                                  minOccurs="1">
+                                                  <xs:complexType mixed="false">
+                                                  <xs:sequence>
+                                                  <xs:element maxOccurs="unbounded" name="alineje"
+                                                  minOccurs="1">
+                                                  <xs:simpleType>
+                                                  <xs:restriction base="xs:string">
+                                                  <xs:pattern value="\-\s.*"/>
+                                                  </xs:restriction>
+                                                  </xs:simpleType>
+                                                  </xs:element>
+                                                  </xs:sequence>
+                                                  <xs:attribute name="naziv">
+                                                  <xs:simpleType>
+                                                  <xs:restriction base="xs:string">
+                                                  <xs:pattern value="\(\d+\).*"/>
+                                                  </xs:restriction>
+                                                  </xs:simpleType>
+                                                  </xs:attribute>
+                                                  </xs:complexType>
+                                                  </xs:element>
+                                                </xs:sequence>
+                                                <xs:attribute name="naziv">
+                                                  <xs:simpleType>
+                                                  <xs:restriction base="xs:string">
+                                                  <xs:pattern value="(\d)+\).*"/>
+                                                  </xs:restriction>
+                                                  </xs:simpleType>
+                                                </xs:attribute>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="id">
+                                        <xs:simpleType>
+                                            <xs:restriction base="xs:string">
+                                                <xs:pattern value="\p{Nd}"/>
+                                            </xs:restriction>
+                                        </xs:simpleType>
+                                    </xs:attribute>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="link">
+                                <xs:complexType>
+                                    <xs:attribute name="id" type="xs:string"/>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:choice>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute name="broj" use="required">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:pattern value="\p{N}\."/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="naziv" type="xs:string" use="optional"/>
+            <xs:attribute name="ID" type="xs:string"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="odeljak">
+        <xs:complexType>
+            <xs:choice>
+                <xs:element maxOccurs="unbounded" ref="pr:clan" minOccurs="1"/>
+                <xs:element maxOccurs="unbounded" minOccurs="0" ref="pr:odeljak"> </xs:element>
+            </xs:choice>
+            <xs:attribute name="redni_broj" use="optional">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:pattern value="\p{N}+\."/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="naziv" use="optional">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:pattern value="\p{Lu}.*"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="ID" type="xs:string"/>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

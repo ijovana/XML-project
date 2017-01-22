@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<propis xmlns="http://www.parlament.gov.rs/propisi" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" naziv="Krivicni zakonik" ID="a60256a6-ed3b-42ea-a6ba-deacea5b96f5" xsi:schemaLocation="http://www.parlament.gov.rs/propisi file://home/kristina/Desktop/XMLProj/XML-project/data/propis.xsd">
+    <deo naziv="OPSTI">
+        <glava broj="I" naslov="OSNOVNE ODREDBE">
+            <odeljak redni_broj="1." naziv="DDDD">
+                <clan broj="1.">
+                    <naslov>Nema krivi�nog dela niti kazne bez zakona</naslov>
+                    <opis/>
+                    <sadrzaj>
+                        <stav id="1">
+                            <tacka naziv="1)">
+<podtacka naziv="(1)">
+    <alineje>- a</alineje>
+</podtacka>
+                            </tacka>
+                        </stav>
+                    </sadrzaj>
+                </clan>
+            </odeljak>
+        </glava>
+    </deo>
+</propis>

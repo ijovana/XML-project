@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<korisnik xmlns="http://www.parlament.gov.rs/korisnici" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="f6068234-d8c3-4218-8646-d4c8ae474b9a" xsi:schemaLocation="http://www.parlament.gov.rs/korisnici file:/C:\Users\Mima\Documents\GitHub\apache-tomee-plus-1.7.4/_data/schemas/korisnik.xsd">
+    <ime>Jovana</ime>
+    <prezime>Ikonic</prezime>
+    <korisnickoIme>j-o-v-a-n-a</korisnickoIme>
+    <sifra>58c19b1320928e82cabaf31b5d0254881cd1c994</sifra>
+    <uloga>admin</uloga>
+</korisnik>

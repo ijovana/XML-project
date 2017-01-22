@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+    targetNamespace="http://www.parlament.gov.rs/korisnici"
+    xmlns:us="http://www.parlament.gov.rs/korisnici">
+
+    <xs:element name="korisnik">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="ime" type="xs:string"/>
+                <xs:element name="prezime" type="xs:string"/>
+                <xs:element name="korisnickoIme" type="xs:string"/>
+                <xs:element name="sifra" type="xs:string"/>
+                <xs:element name="uloga" type="xs:string"/>
+            </xs:sequence>
+            <xs:attribute name="ID" type="xs:string"/>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

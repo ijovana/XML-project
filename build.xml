@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project name="XML-project" basedir=".">
+
+	<property file="build.properties" />
+
+	<property name="build" value="${basedir}/build" />
+	<property name="dist" value="${basedir}/dist" />
+	<property name="docs" value="${basedir}/docs" />
+	<property name="lib" value="${basedir}/lib" />
+	<property name="src" value="${basedir}/src" />
+	<property name="web" value="${basedir}/web" />
+	<property name="conf" value="${basedir}/conf" />
+	<property name="data" value="${basedir}/data" />
+
+	<path id="classpath">
+		<fileset dir="${lib}" includes="*.jar" />
+	</path>
+
+	<!-- Delete all built files -->
+	<target name="clean">
+		<delete dir="${build}" />
+		<delete dir="${dist}" />
+		<delete file="${tomee.dir}/webapps/${earname}" />
+		<delete dir="${tomee.dir}/webapps/${dirname}" />
+		
+		<!-- Historical Archive -->
+		<delete file="${tomee.dir}/webapps/historical-arcieve.war" />
+		<delete dir="${tomee.dir}/webapps/historical-arcieve" />
+		
+		<!-- _temp folder -->
+		<delete dir="${tomee.dir}/_data" />
+	</target>
+
+	<target name="check-tomee" unless="tomee.dir">
+		<fail>
+			Property "tomee.dir" is not set. Please use the file
+			"build.properties" in this directory ${basedir} to
+			set this property. It must point to the directory which
+			contains the following directory: "bin", "conf", "webapps"
+			etc.
+		</fail>
+	</target>
+
+	<target name="check-environment">
+		<antcall target="check-tomee" />
+	</target>
+
+	<target name="init" depends="check-environment">
+		<mkdir dir="${build}" />
+		<mkdir dir="${dist}" />
+		<echo message="java.home = ${java.home}" />
+		<echo message="tomee.dir = ${tomee.dir}" />
+	</target>
+	
+	<!-- Enable HTTPS -->
+	<target name="apache-conf-secured">
+		<copy todir="${tomee.dir}/conf" overwrite="true">
+			<fileset dir="${conf}/secured" includes="server.xml" />
+			<fileset dir="${conf}/secured" includes="keystore/**" />
+		</copy>
+		<copy todir="${web}/WEB-INF" overwrite="true">
+			<fileset dir="${conf}/secured" includes="web.xml" />
+		</copy>
+	</target>
+	
+	<!-- Default HTTP protocol (disabled HTTPS) -->
+	<target name="apache-conf-default">
+		<copy todir="${tomee.dir}/conf" overwrite="true">
+			<fileset dir="${conf}/default" includes="server.xml" />
+		</copy>
+		<copy todir="${web}/WEB-INF" overwrite="true">
+			<fileset dir="${conf}/default" includes="web.xml" />
+		</copy>
+		<delete dir="${tomee.dir}/conf/keystore" />
+	</target>
+
+	<!-- Compile everything -->
+	<target name="compile" depends="init">
+		<javac srcdir="${src}" destdir="${build}" classpathref="classpath" debug="true" encoding="iso-8859-1"/>
+		<copy todir="${build}">
+			<fileset dir="${src}" includes="**/*.properties" />
+			<fileset dir="${src}" includes="**/*.xml" />
+		</copy>
+	</target>
+
+	<!-- War -->
+	<target name="war" depends="compile">
+		<war destfile="${dist}/${warname}" webxml="${web}/WEB-INF/web.xml">
+			<zipfileset dir="${web}">
+				<include name="*" />
+				<!--include name="*.html" /-->
+				<include name="css/*.css"/>
+				<!--include name="js/*.js" />-->
+				<include name="templates/*" />
+			</zipfileset>
+			<classes dir="build">
+				<include name="rs/townhall/rest/*.class" />
+				<include name="rs/townhall/rest/model/*.class" />
+				<include name="rs/townhall/rest/authorization/*.class" />
+				<include name="rs/townhall/rest/authorization/*.properties" />
+				<!-- <include name="log4j.properties"/> -->
+			</classes>
+		</war>
+	</target>
+	
+	<!-- Historical Archive of Novi Sad War -->
+	<target name="historical-archieve-war" depends="compile">
+		<war destfile="${dist}/historical-arcieve.war" webxml="${web}/WEB-INF/web.xml">
+			<zipfileset dir="${web}">
+				<!-- Right now there isn't anything. Some files from Town hall are used -->
+				<include name="*.html" />
+			</zipfileset>
+			<classes dir="build">
+				<include name="rs/historicalarchive/rest/*.class" />
+				<include name="rs/historicalarchive/dao/*.class" />
+				<include name="rs/townhall/entity/regulation/*.class" />
+				<include name="util/*.class" />
+				<include name="connection.properties" />
+				<include name="rs/townhall/security/*.class" />
+			</classes>
+		</war>
+	</target>
+
+	<!-- Jar -->
+	<target name="jar" depends="compile">
+		<mkdir dir="${dist}" />
+		<jar destfile="${dist}/${jarname}">
+			<zipfileset dir="${build}/META-INF" prefix="META-INF">
+				<!-- <include name="persistence.xml" /> -->
+			</zipfileset>
+			<zipfileset dir="${build}">
+				<include name="rs/townhall/rest/model/*.class" />
+				<include name="rs/townhall/dao/*.class" />
+				<include name="rs/townhall/dao/interceptor/*.class" />
+				<include name="rs/townhall/entity/IDGenerator.class"/>
+				<include name="rs/townhall/entity/amendment/*.class" />
+				<include name="rs/townhall/entity/regulation/*.class" />
+				<include name="rs/townhall/entity/session/*.class" />
+				<include name="rs/townhall/entity/user/*.class" />
+				<include name="rs/townhall/security/*.class" />
+				<include name="rs/townhall/sparql/*.class" />
+				<include name="util/*.class" />
+				<include name="connection.properties" />
+			</zipfileset>
+		</jar>
+	</target>
+
+	<!-- Ear -->
+	<target name="ear" depends="jar,war">
+		<mkdir dir="${dist}" />
+		<ear destfile="${dist}/${earname}" appxml="${build}/META-INF/application.xml">
+			<zipfileset dir="${dist}">
+				<include name="${jarname}" />
+				<include name="${warname}" />
+			</zipfileset>
+		</ear>
+	</target>
+
+	<!-- Deploy  -->
+	<target name="deploy" depends="ear, historical-archieve-war">
+		<copy todir="${tomee.dir}/lib">
+			<!-- <fileset dir="${lib}" includes="mysql-connector-java-5.1.22-bin.jar" /> -->
+			<fileset dir="${lib}" includes="log4j-1.2.8.jar" />
+			<fileset dir="${lib}" includes="javax.ws.rs-api-2.0.1.jar" />
+			
+			<!-- Marklogic -->
+			<fileset dir="${lib}" includes="commons-codec-1.7.jar" />
+			<fileset dir="${lib}" includes="commons-logging-1.1.1.jar" />
+			<fileset dir="${lib}" includes="httpclient-4.5.jar" />
+			<fileset dir="${lib}" includes="httpcore-4.4.4.jar" />
+			<fileset dir="${lib}" includes="jackson-annotations-2.4.1.jar" />	
+			<fileset dir="${lib}" includes="jackson-core-2.4.1.jar" />
+			<fileset dir="${lib}" includes="jackson-databind-2.4.1.jar" />
+			<fileset dir="${lib}" includes="java-client-api-3.0.4.jar" />
+			<fileset dir="${lib}" includes="jersey-apache-client4-1.17.jar" />
+			<fileset dir="${lib}" includes="jersey-client-1.17.jar" />
+			<fileset dir="${lib}" includes="jersey-core-1.17.jar" />
+			<fileset dir="${lib}" includes="jersey-multipart-1.17.jar" />
+			<fileset dir="${lib}" includes="logback-classic-1.1.2.jar" />
+			<fileset dir="${lib}" includes="logback-core-1.1.2.jar" />
+			<fileset dir="${lib}" includes="mimepull-1.6.jar" />
+			<fileset dir="${lib}" includes="mimepull-1.9.4.jar" />
+			<fileset dir="${lib}" includes="slf4j-api-1.7.4.jar" />
+			<fileset dir="${lib}" includes="xml-apis.jar" />
+			<fileset dir="${lib}" includes="xmlsec-1.4.2.jar" />
+			<fileset dir="${lib}" includes="bcprov-jdk16-141.jar" />
+			<fileset dir="${lib}" includes="resolver.jar" />
+			<fileset dir="${lib}" includes="xalan.jar" />
+			<fileset dir="${lib}" includes="serializer.jar" />
+			<fileset dir="${lib}" includes="xercesImpl.jar" />
+			<!-- PDF -->
+			<fileset dir="${lib}" includes="fop.jar" />
+			<fileset dir="${lib}" includes="xmlgraphics-commons-2.1.jar" />
+			<fileset dir="${lib}" includes="avalon-framework-api-4.3.1.jar" />
+			<fileset dir="${lib}" includes="avalon-framework-impl-4.3.1.jar" />
+			<fileset dir="${lib}" includes="batik-all-1.8.jar" />
+		</copy>
+		<copy todir="${tomee.dir}/webapps">
+			<fileset dir="${dist}" includes="${earname}" />
+			
+			<!-- Historical archive -->
+			<fileset dir="${dist}" includes="historical-arcieve.war" />
+		</copy>
+		
+		<!-- tmp folder -->
+		<copy todir="${tomee.dir}/_data">
+			<fileset dir="${data}" includes="schemas/*.xsd" />
+			<fileset dir="${data}" includes="documents/**" />
+			<fileset dir="${data}" includes="security/**" />
+			<fileset dir="${data}" includes="pdf/**" />
+			<fileset dir="${data}" includes="xsl/**" />
+			<fileset dir="${data}" includes="xsl-fo/**" />
+			<fileset dir="${data}" includes="gen/**" />
+		</copy>
+	</target>
+</project>

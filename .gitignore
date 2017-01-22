@@ -1,0 +1,4 @@
+build/*
+dist/*
+build.properties
+XMLFrontend/node_modules

@@ -1,0 +1,32 @@
+<div  ng-app="skupstinaApp" ng-controller="lawCtrl" ng-class="{loading:loadingView}">
+
+	<div class="container">
+
+		<h1>Lista zakona </h1>
+
+		<div class="row">
+			<div class = "col-sm-6">
+				<table class= "table">
+						<thead>
+		     					 <tr>
+		        				<th>Naziv zakona</th>
+		        				<th>Pregled zakona</th>
+		        				<th>Snimi PDF</th>
+		      					</tr>
+		    			</thead>
+						<tbody>
+		  				<tr ng-repeat="regulation in getRegulations['ns1.propis'] ">
+		 	   				<td>{{regulation["@naziv"]}}</td>
+							<td><button type="button" class="btn btn-info" ng-click="test_pdf()">Pregled</button></td>
+							<td><button type="button" class="btn btn-info" ng-click="test_pdf_download()">Snimi</button></td>
+		  				</tr>
+						</tbody>
+					</table>
+			</div>
+
+		</div>
+
+
+	</div>
+
+</div>

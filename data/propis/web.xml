@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<pr:propis xmlns:pr="http://www.parlament.gov.rs/propisi" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" naziv="web" xs:schemaLocation="http://www.parlament.gov.rs/propisi file://home/kristina/Desktop/XMLProj/XML-project/data/propis.xsd">
+    <pr:deo naziv="fadfd" redni_broj="rahkxIuyGieHhRvOyD1EM">
+        <pr:glava broj="" naslov="ÙØØ"/>
+        <pr:glava broj="" naslov="ÜÑÛ"/>
+    </pr:deo>
+    <pr:deo naziv="Ø" redni_broj="P2B_u-hDZ1n">
+        <pr:glava broj="" naslov="ÔJ"/>
+        <pr:glava broj="" naslov="ÉÅ"/>
+    </pr:deo>
+</pr:propis>

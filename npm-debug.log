@@ -1,0 +1,20 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'run', 'build' ]
+2 info using npm@3.5.3
+3 info using node@v0.10.25
+4 verbose node symlink /usr/bin/node
+5 verbose config Skipping project config: /home/kristina/.npmrc. (matches userconfig)
+6 verbose stack Error: ENOENT, open '/home/kristina/package.json'
+7 verbose cwd /home/kristina/Desktop/XMLProj/XML-project
+8 error Linux 3.13.0-87-generic
+9 error argv "node" "/usr/local/bin/npm" "run" "build"
+10 error node v0.10.25
+11 error npm  v3.5.3
+12 error path /home/kristina/package.json
+13 error code ENOENT
+14 error errno 34
+15 error enoent ENOENT, open '/home/kristina/package.json'
+16 error enoent ENOENT, open '/home/kristina/package.json'
+16 error enoent This is most likely not a problem with npm itself
+16 error enoent and is related to npm not being able to find a file.
+17 verbose exit [ 34, true ]

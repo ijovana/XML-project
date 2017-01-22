@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+    targetNamespace="http://www.parlament.gov.rs/sednica"
+    xmlns:sed="http://www.parlament.gov.rs/sednica">
+
+    <xs:element name="sednica">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" name="glasanje">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="predmet_glasanja" type="xs:string"/>
+                            <xs:element name="broj_glasova_za" type="xs:int"/>
+                            <xs:element name="broj_glasova_protiv" type="xs:int"/>
+                            <xs:element name="broj_glasova_uzdrzani" type="xs:int"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="stanje" type="xs:string"/>
+                <xs:element name="status" type="xs:string"/>
+            </xs:sequence>
+            <xs:attribute name="ID" type="xs:string"/>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

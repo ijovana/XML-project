@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="propis.xsl"?>
+<propis xmlns="http://www.parlament.gov.rs/propisi" naziv="KRIVIČNI ZAKONIK" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.parlament.gov.rs/propisi file:/data/propis.xsd">
+    <deo naziv="OPŠTI DEO" redni_broj="1.">
+        <glava broj="I" naslov="OSNOVNE ODREDBE">
+            <odeljak redni_broj="1." naziv="Odeljak1">
+                <clan broj="1." naziv="">
+                    <naslov>Nema krivičnog dela niti kazne bez zakona</naslov>
+                    <opis>Nikome ne može biti izrečena kazna ili druga krivična sankcija za delo koje pre   nego što je učinjeno zakonom nije bilo određeno kao krivično delo, niti mu se može izreći kazna  ili druga krivična sankcija koja zakonom nije bila propisana pre nego što je krivino delo učinjeno.</opis>
+                    <sadrzaj>
+                        <stav id="1">
+                            <tacka naziv="1) ksdfkmsdk">
+<podtacka naziv="(1) sdfs">
+    <alineje>- a</alineje>
+</podtacka>
+                            </tacka>
+                        </stav>
+                    </sadrzaj>
+                </clan>
+            </odeljak>
+        </glava>
+    </deo>
+</propis>
