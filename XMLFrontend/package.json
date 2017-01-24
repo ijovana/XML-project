@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "browserify_1": "browserify -e src/scripts/dependencies_list.js -o dist/dependencies.js",
     "browserify_2": "browserify -e src/scripts/index.js -o dist/sve.js ",
-    "copy_dist": "cp -rf dist/* ../web/",
+    "copy_dist": "copy dist\\* ..\\web\\",
     "build": "npm run browserify_1 && npm run browserify_2 && npm run copy_dist && echo 'Done'"
   },
   "repository": {
